@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	body{margin:0 25px 125px 25px;}
+	a{text-decoration: none;}
+	#outergameArea{
+		width: 425px; 
+		height: 137px; 	
+		padding: 20px 20px 0 20px;	
+		margin-left: 50px;
+		border: 2px solid #525;
+		border-radius: 20px;
+	}
+
+	#computerArea{
+		float: left;
+		width: 200px;
+		height:110px;
+	}
+
+	#humanArea{
+		float: right;
+		width:200px;
+		height:110px;
+	}
+	/*	#humanArea:hover{
+		background:url(img/humans-image.gif) 0 -8px;
+	}*/
+	.humanRock{
+		background:url(img/humans-image.gif) 0 -4px;
+	}
+		.humanRockUp{
+			background:url(img/humans-image.gif) 0 -9px;
+		}
+		.humanRockDown{
+			background:url(img/humans-image.gif) 0 7px;
+		}
+
+	.humanPaper{
+		background:url(img/humans-image.gif) 15px -155px;	
+	}
+
+	.humanScissors{
+		background:url(img/humans-image.gif) -1px -303px;		
+	}
+
+	.computerRock{
+		background:url(img/computers-image.gif) -15px -6px;
+	}
+		.computerRockUp{
+		background:url(img/computers-image.gif) -15px -9px;
+		}
+		.computerRockDown{
+			background:url(img/computers-image.gif) -15px 7px;
+		}		
+
+	.computerPaper{
+		background:url(img/computers-image.gif) -15px -155px;	
+	}
+	.computerScissors{
+		background:url(img/computers-image.gif) -15px -303px;		
+	}
+
+	#reset{
+		float: right;
+	}
+
+	.controls{
+		clear: both;
+		position: relative;
+		top: 47px;
+		left: -60px;
+	}
+
+	ul.controls li{
+		list-style-type: none;
+		display: inline-block;
+		height: 25px;
+		width: auto;
+		padding: 5px 10px 0 10px;
+		margin-right: 5px;
+		background-color: #9DBDC6;
+		border-radius: 5px;
+		border: none;	
+		outline: none;
+	}
+	ul.controls li:hover{
+		background-color: navajowhite;
+		cursor: pointer;	
+	}
+	ul.controls li:visited{
+		background-color: #272F32;
+	}
+	</style>
+</head>
+
+<body>
+<h1>Rock Paper Scissors</h1>
+
+<!-- <h4>Question 2: Link to a program written from scratch<h4>
+<p>Please link to a program you've written from scratch.
+
+You can use something like GitHub's gist to host your code. It doesn't need to be long, but it should be something you've written yourself, and not using a framework (e.g., Rails). If you don't have anything to submit, code something small, like a game of tic-tac-toe.</p> -->
+
+<!-- <h4>Algorithim for game</h4>
+	<ul> 
+		<li>User picks a selection, press "play"</li>
+		<li>Animate hand to lift and set down 3 times from rock position</li>
+		<li>Include a timer on the upper right that shows a count down from 3</li>
+		<li>On 3rd time: 
+			<ul>
+				<li>Randomly choose for the computer an option of rock paper or scissors.</li>
+				<li>Player must select one of the options of rock paper or scissors before timer is up</li>
+			</ul>
+		</li>
+	</ul> -->
+
+<div id="outergameArea">
+	<div id="computerArea" class="computerRock">
+		<p style="position: relative; top:69px; left:137px;">Computer</p>
+	</div>
+
+	<div id="humanArea" class="humanRock">
+		<p style="position: relative; top:70px; left:20px;">You</p>
+	</div>
+	<ul class="controls">
+		<li id="rock"><a href="#">rock</a></li>
+ 		<li id="paper"><a href="#">paper</a></li>
+		<li id="scissors"><a href="#">scissors</a></li>
+	</ul>
+</div>
+
+<!-- <canvas  width="500" height="500" style="border:1px solid black"></canvas>
+ -->
+
+<script>
+
+function play(event){
+	event = event || window.event;//for cross browser capability detection of event or global object event
+	var rock = document.getElementById('rock');
+	var paper = document.getElementById('paper');
+	var scissors = document.getElementById('scissors');
+	var x = document.getElementById('humanArea');
+	var y =document.getElementById('computerArea');
+
+	function goTime(){ //animation for hands
+		//slam1
+		setTimeout(function(){x.className = "humanRockUp", y.className = "computerRockUp"},500);
+		setTimeout(function(){x.className = "humanRockDown",y.className = "computerRockDown"},1000);	
+		
+		//slam 2
+		setTimeout(function(){x.className = "humanRockUp", y.className = "computerRockUp"},1500);
+		setTimeout(function(){x.className = "humanRockDown",y.className = "computerRockDown"},2000);	
+
+		//slam 3
+		setTimeout(function(){x.className = "humanRockUp", y.className = "computerRockUp"},2500);	
+		setTimeout(function(){
+			//if the computer chooses
+			if(computerChoice=="rock"){
+				y.className = "computerRockDown"
+			}else if(computerChoice=="scissors"){
+				y.className = "computerScissors"
+			} else if(computerChoice=="paper"){
+				y.className = "computerPaper"
+			}
+			if(userChoice=="rock"){
+				x.className = "humanRockDown"
+			}else if(userChoice=="scissors"){
+				x.className = "humanScissors"
+			} else if(userChoice=="paper"){
+				x.className = "humanPaper"
+			}
+		},3000);
+
+	}
+
+	//User Choices
+	rock.addEventListener('click', function(){
+		userChoice="rock";
+		goTime();		
+		computerLogic();
+		compare();
+	},false);
+
+
+	paper.addEventListener('click', function(){
+		userChoice="paper";
+		goTime();
+		computerLogic();	
+		compare();
+	},false);
+
+	scissors.addEventListener('click', function(){
+		userChoice="scissors";
+		goTime();
+		computerLogic();
+		compare();
+	},false);
+
+	function computerLogic(){
+	computerChoice = Math.floor(Math.random()*6);
+	//Randomized Computer Choice
+			if (computerChoice<=1) {
+				computerChoice = "rock";
+			} else if(computerChoice >=2 && computerChoice <=3){
+				computerChoice = "scissors";
+			} else if(computerChoice >=4){
+				computerChoice = "paper";
+			}	
+	}
+	function compare(){
+		var result;
+
+		if (userChoice === computerChoice){
+			var result = 'It\'s a tie!';
+		} else if(userChoice === "rock"){
+			if(computerChoice==="scissors")	{
+				result = 'You win!!';
+			}else if(computerChoice==="paper"){
+				result = 'You lose!';
+			}
+		} else if(userChoice === "scissors"){
+			if(computerChoice==="rock"){
+				result = 'You lose!';
+			}else{
+				result = "You win!"
+			}
+		} else if (userChoice ==="paper") {
+			if (computerChoice ==="rock") {				
+				result = 'You win!';
+			}else if(computerChoice==="scissors"){
+				result = 'You lose!';
+			}
+		};
+		setTimeout(function(){
+			alert(result + " "+"You picked " + userChoice + " & the computer picked " + computerChoice)
+		},3500);	
+
+	}
+}
+play();
+</script>
+</body>
+</html
