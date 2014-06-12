@@ -1,4 +1,5 @@
-
+// Copyright by Jannaee Sick
+// Visit www.Jannaee.com to see my other works of art :D
 
 function play(event){
 	event = event || window.event;//for cross browser capability detection of event or global object event
@@ -7,6 +8,8 @@ function play(event){
 	var scissors = document.getElementById('scissors');
 	var x = document.getElementById('humanArea');
 	var y =document.getElementById('computerArea');
+	var computerChoice, userChoice;
+	
 
 	function goTime(){ //animation for hands
 		//slam1
@@ -20,6 +23,7 @@ function play(event){
 		//slam 3
 		setTimeout(function(){x.className = "humanRockUp", y.className = "computerRockUp"},2500);	
 		setTimeout(function(){
+
 			//if the computer chooses
 			if(computerChoice=="rock"){
 				y.className = "computerRockDown"
@@ -39,19 +43,19 @@ function play(event){
 
 	}
 
-	var gameLogic = function (userChoice){
+
+	function gameLogic(userChoice){
 		goTime();		
 		computerLogic();
-		compare();
+		compare();		
 	};
 
+
 	//User Choices
-
-	rock.addEventListener('click', function(){//revise this to make it a true callback
-		userChoice = 'rock';
-	 	gameLogic();
+	rock.addEventListener('click', function(){
+		userChoice ='rock';
+		gameLogic('rock');
 	}, false);
-
 
 	paper.addEventListener('click', function(){
 		userChoice = "paper";
@@ -62,6 +66,8 @@ function play(event){
 		userChoice = "scissors";
 		gameLogic();
 	},false);
+
+
 
 	function computerLogic(){
 	computerChoice = Math.floor(Math.random()*6);
@@ -75,10 +81,10 @@ function play(event){
 			}	
 	}
 	function compare(){
-		var result;
+	var result;
 
 		if (userChoice === computerChoice){
-			var result = 'It\'s a tie!';
+			   result = 'It\'s a tie!';
 		} else if(userChoice === "rock"){
 			if(computerChoice==="scissors")	{
 				result = 'You win!!';
@@ -103,6 +109,5 @@ function play(event){
 		},3500);	
 
 	}
-
 }
 play();
