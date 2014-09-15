@@ -13,7 +13,7 @@ Thank you for visiting my Hacker School Application page. Below you will find my
 * [Download](https://github.com/jannaee/hackapp/archive/master.zip) the code here
 
 
-(Update: I originally started this application in the month of June for consideration of the July enrollment. However, due to a family loss I took a break from programming. Despite this lull in work, I am picking right back up where I left off. The following answers is still a reflection of my current enthusiasm and interest in programming.) 
+(Update: I originally started this application in the month of June for consideration of the July enrollment. However, due to a family loss I took a break from programming. Despite this lull in work, I am picking right back up where I left off. I believe the following responses are still relevant in demonstrating my enthusiasm and interests in programming.) 
 
 ### The most fascinating thing that I’ve learned in the past month
 Learning how to build a robot based on the Javascript framework Johnny-Five has been the most fascinating thing that I’ve learned in the past month. I was exposed to a world of robotics programming while attending JSConf2014. I learned how to develop programs on a SparkCore (an Arduino compatible development board), basic electrical engineering and I learned how to leverage Johnny-Five all for the purpose of building a robot. This is a hobby project that I have been working on and I still have many features to incorporate into my robot. The second version of this robot will include pre-recorded voices and distance sensors. On completion of this project I will have a Javascript powered replica of the television character Johnny-Five from the movie Short Circuit. 
