@@ -31,5 +31,5 @@ If I were at Hackerschool I would like to either build out a wearable electronic
 My backgrond and degree is in Fine Arts with a focus in Graphic Design. I have spent over 12 years evolving from a graphic designer to web designer into front end developer. It wasn't until 2012 that I began teaching myself how to program with Javascript via online resources and enrolling into Zappos' pilot developer bootcamp. This year, after attending my first Robotics hackathon at JSCONF, I have discovered that I would like to specifically use Javascript to power physical devices. However, my skills need much improving and since I have no formal training am really hopeful to be exposed to students who have formal CIS training.
 
 
-
-
+### Past as a professional programmer
+Yes, I have worked as a programmer. I worked as a Front-end developer for 1.5 years in the corporate marketing department of EverBank. When I began at EverBank, I started as a junior web designer tasked with maintinaing website html code and coordinationg code changes for change controls. Eventually, I asked to have more responsibilities that included projects built with javascript. My daily tasks included troubleshooting and fixing javascript related bugs. Determining if a code fix could be made on the front end or if it involved working with backend developers. 
