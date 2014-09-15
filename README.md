@@ -33,4 +33,8 @@ My backgrond and degree is in Fine Arts with a focus in Graphic Design. I have s
 
 ### Past as a professional programmer
 Yes, I have worked as a programmer. I worked as a Front-end developer for 1.5 years in the corporate marketing department of EverBank. When I began at EverBank, I started as a junior web designer and was tasked with maintaining website html/css code. 
-A few years later, after convincing my boss to assign me projects of more complex nature that required javascript solutions, I continued work as a front-end developer. My tasks included creating ways to import data dynamically from databases, displaying up to date rates on dynamic banners, and creating animations with javascript frameworks like Raphaeljs.  My other tasks included maintaining javascript libraries built by my predecessor, researching and implementing new features requested by stakeholders, and troubleshooting javascript related bugs.
+
+A few years later, after convincing my boss to assign me projects requiring javascript solutions, I continued working there as a front-end developer. My tasks included creating ways to import data dynamically from databases, displaying up-to-date rates on dynamic banners, and creating animations with javascript frameworks like Raphaeljs.  My other tasks included maintaining javascript libraries built by my predecessor, researching and implementing new features requested by stakeholders, and troubleshooting and resolving javascript related bugs.
+
+### Do you have a Computer Science degree or are you seeking one?
+I do not have a Computer Science degree but I wish I had one. 
